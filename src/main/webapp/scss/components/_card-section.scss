@@ -1,0 +1,21 @@
+.person-cell {
+
+    > section {
+
+        [title]:not(i) {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 14px;
+            &:before {
+                content: attr(title) ': ';
+                font-weight: bold;
+                width: 45%;
+                flex-shrink: 0;
+                padding-right: 10px;
+                box-sizing: border-box;
+            }
+        }
+    }
+}

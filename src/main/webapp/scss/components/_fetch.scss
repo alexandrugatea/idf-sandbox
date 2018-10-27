@@ -1,0 +1,13 @@
+.person-view {
+
+    > footer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: $base-space;
+
+        button {
+            @include cta;
+        }
+    }
+}

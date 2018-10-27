@@ -1,0 +1,25 @@
+.person-view {
+    display: grid;
+    grid-template-columns: 280px auto;
+    grid-template-areas: "filters sections"
+                         "filters fetch"; 
+    background: material-color('grey', '100');
+    overflow-y: auto;
+    
+    > header {
+        grid-area: filters;
+        background: material-color('grey', '900');
+        height: 100vh;
+        overflow-y: auto;
+        position: sticky;
+        top: 0;
+    }
+
+    > section {
+        grid-area: sections;
+    }
+
+    > footer {
+        grid-area: fetch;
+    }
+}

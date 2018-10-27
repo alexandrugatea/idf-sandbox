@@ -1,0 +1,19 @@
+// import card elements
+@import 'card-header',
+        'card-section',
+        'card-footer';
+
+// base card styles
+
+.person-cell {
+    background: $white;
+    box-shadow: $card-shadow $card-shadow-color-alpha;
+    height: 100%;
+    padding-bottom: 40px;
+    position: relative;
+    
+    header, section {
+        padding: $base-space / 2;
+    }
+
+}

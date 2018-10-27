@@ -1,1 +1,18 @@
-/** Add sass/scss rules here for your application. */
+// import partials
+
+@import 'base/variables',
+        'mixins/mixins',
+        'vendor/fontawesome/font-awesome',
+        'vendor/material-color/sass-material-colors';
+
+
+@import 'base/reset',
+        'base/grid';
+
+@import 'components/card',
+        'components/filters',
+        'components/fetch';
+
+
+@import 'view/grid-view',
+        'view/list-view';

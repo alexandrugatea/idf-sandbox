@@ -1,0 +1,44 @@
+// card header variables
+
+.person-cell {
+
+    header {
+        position: relative;
+
+        figure {
+            display: flex;
+            align-items: center;
+
+            .avatar {
+                margin-right:$base-space / 2;
+            }
+
+            .caption {
+                flex-grow: 1;
+
+                .title {
+                    display: block;
+                    font-size: 12px;
+                    font-style: italic;
+                }
+
+                .first-name {
+                    &:after {
+                        content: ' ';
+                    }
+                }
+
+                .last-name {
+                    text-transform: uppercase;
+                    &:after {
+                        content: ', ';
+                    }
+                }
+
+                .suffix {
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+// rfeset browser agent
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $body;
+    color: $type;
+    font-family: $base-font-family;
+}
+
+.workspace {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}

@@ -1,0 +1,26 @@
+.person-cell {
+    
+    footer {
+
+        nav {
+
+            button {
+                border: none;
+                background: transparent;
+                font-size: 0;
+
+                .edit {
+                    @include icon($fa-var-pencil-square-o);
+                }
+
+                .copy {
+                    @include icon($fa-var-copy);
+                }
+
+                .delete {
+                    @include icon($fa-var-trash-o);
+                }
+            }
+        }
+    }
+}

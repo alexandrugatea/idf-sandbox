@@ -1,0 +1,41 @@
+// custom made mixins
+
+// replace string with icon font
+
+@mixin icon($icon: $fa-var-link, $color: $type, $align-horizontal: center, $align-vertical: center) {
+    font-size: 0;
+    display: inline-flex;
+    justify-content: $align-horizontal;
+    align-items: $align-vertical;
+
+    &:before {
+        content: $icon;
+        color: $type;
+        font-size: 16px;
+        font-family: FontAwesome;
+        font-style: normal;
+    }
+}
+
+@mixin font($size: 16, $line-height: 1.5, $weight: 500) {
+    
+    font-size: $size;
+    line-height: $line-height;
+    font-weight: $weight;
+    font-family: $base-font-family;
+}
+
+
+// create button
+
+@mixin cta($background: $white, $color: $black, $border-color: $black, $pad-h: 40px) {
+    
+    @include font(16px, 40px, 500);
+    display: inline-flex;
+    padding-left: $pad-h;
+    padding-right: $pad-h;
+    background: $background;
+    border: 1px solid $border-color;
+    color: $color;
+
+}
