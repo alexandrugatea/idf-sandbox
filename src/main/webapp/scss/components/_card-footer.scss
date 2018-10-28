@@ -8,17 +8,40 @@
                 border: none;
                 background: transparent;
                 font-size: 0;
+                cursor: pointer;
+                transition: all 0.45s ease-in;
+                outline: none;
 
                 .edit {
-                    @include icon($fa-var-pencil-square-o);
+                    @include icon($fa-var-pencil-square-o, material-color('grey', '600'));
                 }
 
                 .copy {
-                    @include icon($fa-var-copy);
+                    @include icon($fa-var-copy, material-color('grey', '600'));
                 }
 
                 .delete {
-                    @include icon($fa-var-trash-o);
+                    @include icon($fa-var-trash-o, material-color('grey', '600'));
+                }
+
+                &:hover { 
+                    
+                    i {
+                        transform: scale(1.3);
+                        transition: all 0.15s ease-in-out;
+
+                        &.edit:before {
+                            color:  material-color('green', '500');
+                        }
+    
+                        &.copy:before {
+                            color:  material-color('blue', '500');
+                        }
+    
+                        &.delete:before {
+                            color:  material-color('red', '500');
+                        }
+                    }
                 }
             }
         }

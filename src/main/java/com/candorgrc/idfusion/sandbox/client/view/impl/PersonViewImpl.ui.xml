@@ -8,93 +8,90 @@
 	<g:HTMLPanel styleName="person-view">
 		<header>
 			<div class="filter-toolbar">
-				<div class="title">
-					<span class="label">Title:</span>
-					<select class="value">
+				<div class="form-group title">
+					<select class="value form-element form-select" placeholder="Title" onclick="this.setAttribute('value', this.value);" value="">
 						<option value=""></option>
 						<option value="Mr.">Mr.</option>
 						<option value="Mrs.">Mrs.</option>
 						<option value="Ms.">Ms.</option>
 					</select>
+					<span class="label">Title:</span>
 				</div>
-				<div class="first-name">
+				<div class="form-group first-name">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;"/>
 					<span class="label">First Name:</span>
-					<input type="text" class="value" />
 				</div>
-				<div class="last-name">
+				<div class="form-group last-name">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;"/>
 					<span class="label">Last Name:</span>
-					<input type="text" class="value" />
 				</div>
-				<div class="suffix">
-					<span class="label">Suffix:</span>
-					<select class="value">
+				<div class="form-group suffix">
+					<select class="value form-element form-select" placeholder="&nbsp;" onclick="this.setAttribute('value', this.value);" value="">
 						<option value=""></option>
 						<option value="PhD">PhD.</option>
 						<option value="Engineer">Engineer</option>
 						<option value="Doctor">Doctor</option>
 					</select>
+					<span class="label">Suffix:</span>
 				</div>
-				<div class="gender">
-					<span class="label">Gender:</span>
-					<select class="value">
+				<div class="form-group gender">
+					<select class="value form-element form-select" placeholder="&nbsp;" onclick="this.setAttribute('value', this.value);" value="">
 						<option value=""></option>
 						<option value="m">Male</option>
 						<option value="f">Female</option>
 					</select>
+					<span class="label">Gender:</span>
 				</div>
-				<div class="race">
+				<div class="form-group race">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;" />
 					<span class="label">Race:</span>
-					<input type="text" class="value" />
 				</div>
-				<div class="language">
+				<div class="form-group language">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;" />
 					<span class="label">Language:</span>
-					<input type="text" class="value" />
 				</div>
-				<div class="university">
+				<div class="form-group university">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;" />
 					<span class="label">University:</span>
-					<input type="text" class="value" />
 				</div>
-				<div class="buzzword">
+				<div class="form-group buzzword">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;" />
 					<span class="label">Buzzword:</span>
-					<input type="text" class="value" />
 				</div>
-				<div class="email">
+				<div class="form-group email">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;" />
 					<span class="label">E-Mail:</span>
-					<input type="text" class="value" />
 				</div>
-				<div class="job-title">
+				<div class="form-group job-title">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;" />
 					<span class="label">Job Title:</span>
-					<input type="text" class="value" />
 				</div>
-				<div class="linkedin-skill">
-					<span class="label">LinkedinIn Skill:</span>
-					<input type="text" class="value" />
+				<div class="form-group linkedin-skill">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;" />
+					<span class="label">LinkedinIn Skill</span>
 				</div>
-				<div class="company">
+				<div class="form-group company">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;" />
 					<span class="label">Company:</span>
-					<input type="text" class="value" />
 				</div>
-				<div class="dept">
+				<div class="form-group dept">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;" />
 					<span class="label">Department:</span>
-					<input type="text" class="value" />
 				</div>
-				<div class="ein">
+				<div class="form-group ein">
+					<input type="text" class="value form-element form-input" placeholder="&nbsp;" />
 					<span class="label">Employer Identification Number:</span>
-					<input type="text" class="value" />
 				</div>
-
-
-				<div>
-					<label for="start">Start</label>
-					<input type="date" id="start" value="2018-09-29"
-						min="2018-01-01" max="2018-12-31" />
+				<div class="form-group date date-start">
+					<input type="text" id="start" class="form-element form-input" min="2018-01-01" max="2018-12-31" value="" placeholder="&nbsp;"
+						onclick="this.setAttribute('value', '2018-09-29');this.setAttribute('type', 'date');"/>
+					<label for="start" class="label">Date Start:</label>
 				</div>
-				<div>
-					<label for="end">End</label>
-					<input type="date" id="end" value="2018-10-29"
-						min="2018-01-01" max="2018-12-31" />
+				<div class="form-group date date-end">
+					<input type="text" id="end" class="form-element form-input" min="2018-01-01" max="2018-12-31" value="" placeholder="&nbsp;"
+						onclick="this.setAttribute('value', '2018-09-29');this.setAttribute('type', 'date');"/>
+					<label for="end" class="label">Date End:</label>
 				</div>
-
 			</div>
 			<button ui:field="apply" class="apply-filters">Apply Filters</button>
 		</header>
@@ -107,7 +104,11 @@
 				styleName="grid-view"></dp:PersonCellList>
 		</section>
 		<footer>
-			<button ui:field="fetch" class="fetch">Fetch more...</button>
+			<button ui:field="fetch" class="fetch">Fetch more 
+				<span class="throbber">
+					<span></span><span></span><span></span>
+				</span>
+			</button>
 		</footer>
 	</g:HTMLPanel>
 </ui:UiBinder> 

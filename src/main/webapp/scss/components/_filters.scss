@@ -1,4 +1,7 @@
 .filter-toolbar {
     display: grid;
-    padding: $base-space;
+}
+
+.apply-filters {
+    @include cta(material-color('green', '500'), $white, material-color('green', '700'), 100%);
 }

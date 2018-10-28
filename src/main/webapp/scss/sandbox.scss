@@ -1,15 +1,18 @@
 // import partials
 
-@import 'base/variables',
-        'mixins/mixins',
-        'vendor/fontawesome/font-awesome',
-        'vendor/material-color/sass-material-colors';
+@import 'vendor/fontawesome/font-awesome', 
+        'vendor/material-color/sass-material-colors',
+        'base/variables',
+        'mixins/mixins';
 
 
 @import 'base/reset',
-        'base/grid';
+        'base/grid',
+        'base/forms',
+        'base/scrollbar';
 
-@import 'components/card',
+@import 'components/controls',
+        'components/card',
         'components/filters',
         'components/fetch';
 

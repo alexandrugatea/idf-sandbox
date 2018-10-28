@@ -1,0 +1,30 @@
+// component variables
+
+$scrollbar-width:           $base-space / 5;
+$scrollbar-track:           material-color('grey', '100');
+$scrollbar-thumb:           material-color('green', '600');
+$scrollbar-thumb-hover:     material-color('green', '600');
+
+
+::-webkit-scrollbar {
+    width: $scrollbar-width;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $scrollbar-track; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb;
+    width: $scrollbar-width - 2;
+    margin-left: 1px;
+    border-radius: $scrollbar-width;
+}
+
+// custom scrollbars
+
+.person-view > header::-webkit-scrollbar-track {
+    background: material-color('grey', '900'); 
+}

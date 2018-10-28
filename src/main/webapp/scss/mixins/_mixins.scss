@@ -2,18 +2,21 @@
 
 // replace string with icon font
 
-@mixin icon($icon: $fa-var-link, $color: $type, $align-horizontal: center, $align-vertical: center) {
+@mixin icon($icon: $fa-var-link, $color: inherit, $font-size: 16px, $align-horizontal: center, $align-vertical: center) {
     font-size: 0;
     display: inline-flex;
     justify-content: $align-horizontal;
     align-items: $align-vertical;
 
     &:before {
+
+        @include fa-icon();
+
         content: $icon;
-        color: $type;
-        font-size: 16px;
-        font-family: FontAwesome;
+        color: $color;
+        font-size: $font-size;
         font-style: normal;
+        transition: all 0.45s ease-in;
     }
 }
 
@@ -28,7 +31,7 @@
 
 // create button
 
-@mixin cta($background: $white, $color: $black, $border-color: $black, $pad-h: 40px) {
+@mixin cta($background: material-color('grey', '800'), $color: material-color('grey', '100'), $border-color: material-color('grey', '900'), $width: auto, $pad-h: 40px) {
     
     @include font(16px, 40px, 500);
     display: inline-flex;
@@ -37,5 +40,40 @@
     background: $background;
     border: 1px solid $border-color;
     color: $color;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.45s ease;
+    width: $width;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
 
+    &:hover {
+        background: lighten($background, 10%);
+        box-shadow: 0px 0px 0px 4px rgba($background, 0.2);
+    }
+
+    &:focus, &:active {
+        background: darken($background, 10%);
+        box-shadow: 0px 0px 0px 4px rgba($background, 0.4);
+    }
+}
+
+@mixin title($size: 13px, $width: 35%) {
+    position: relative;
+    font-size: $size;
+    line-height: $size * 1.4;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+    
+    &:before {
+        content: attr(title) ': ';
+        font-weight: 700;
+        width: $width;
+        flex-shrink: 0;
+        padding-right: 10px;
+        box-sizing: border-box;
+        letter-spacing: -0.1px;
+    }
 }

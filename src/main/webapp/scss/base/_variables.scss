@@ -1,16 +1,19 @@
 // variables
 
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,700&subset=latin-ext');
+
 // typography
-$base-font-family: sans-serif;
+$base-font-family: 'Lato',sans-serif;
 
 // colors
 $body:                      #f6f6f6;
 $type:                      #333;
 $white:                     #fff;
 $black:                     #000;
-$male:                      material-color('blue', '500');
-$female:                    material-color('pink', '500');
 
+$male-icon-color:           material-color('blue', '500');
+$female-icon-color:         material-color('pink', '500');
 
 // sizes
 $container-width:           1260px;

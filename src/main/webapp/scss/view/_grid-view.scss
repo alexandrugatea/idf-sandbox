@@ -3,6 +3,7 @@
 $grid-image-size: 50px;
 
 .grid-view {
+
     > div {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -11,13 +12,14 @@ $grid-image-size: 50px;
     }
 
     .person-cell {
+        background: $white;
+        box-shadow: $card-shadow $card-shadow-color-alpha;
 
         header {
             background: material-color('grey', '200');
             padding-left: $grid-image-size + $base-space;
 
-            .avatar {
-
+            .image {
                 position: absolute;
                 bottom: 0;
                 left: $base-space / 2;
@@ -28,9 +30,22 @@ $grid-image-size: 50px;
             }
         }
 
+        &.Male {
+
+            header {
+                border-bottom: 2px solid $male-icon-color;
+            }
+        }
+
+        &.Female {
+            
+            header {
+                border-bottom: 2px solid $female-icon-color;
+            }
+        }
 
         footer {
-            border-top: 1px solid #ddd;
+            border-top: 1px solid material-color('grey', '100');
             position: absolute;
             width: 100%;
             bottom: 0;
@@ -53,6 +68,26 @@ $grid-image-size: 50px;
             aside {
                 padding: 10px 0 0 0;
                 margin-top: 10px;
+            }
+
+            .parent-section {
+                padding: $base-space / 2 0;
+                border-top: 1px solid material-color('grey', '300');
+                margin-bottom: $base-space / 2;
+
+                @include title(10px, auto);
+                
+                &:before {
+                    position: absolute;
+                    top: 0px;
+                    left: 0;
+                    transform: translateY(-50%);
+                    background: $white;
+                    padding: 5px 10px 5px 0;
+                    color: material-color('grey', '500');
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
             }
         }
     }
