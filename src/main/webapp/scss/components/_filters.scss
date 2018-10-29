@@ -1,21 +1,29 @@
 .filter-toolbar {
     display: grid;
     position: fixed;
-    top:0;
-    left: $sidebar-width;
-    height: 100vh;
-
-    // ensure it fits on smallest screen
-    width: calc(320px - $sidebar-width);
-
     padding: $base-space / 3 $base-space / 6 0 $base-space;
     background: material-color('grey', '800');
     overflow: hidden;
     pointer-events: none;
     opacity: 0;
-    transform: translateX(-100%);
     z-index: 999;
     transition: all 0.35s ease-in-out;
+    
+    @include breakpoint(large) {
+        top:0;
+        left: $sidebar-width;
+        height: 100vh;
+        width: 260px;
+        transform: translateX(-100%);
+    }
+
+    @include breakpoint(medium down) {
+        left: 5%;
+        width: 90%;
+        height: calc(100vh - 90px);
+        top: 75px;
+        transform: translateY(100%);
+    }
 
     .filter-toolbar-content {
         overflow-y: auto;
@@ -23,15 +31,39 @@
         padding-top: $base-space / 2;
         overflow-x: hidden;
 
+        @include breakpoint(medium down) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         .form-group {
-            transform: translateX(-20px);
             opacity: 0;
             transition: all 0.3s ease-in-out;
+
+            @include breakpoint(large) {
+                transform: translateX(-20px);
+            }
+
+            @include breakpoint(medium down) {
+                transform: translateY(20px);
+                width: 30%;
+                margin-right: 10px;
+                flex-grow: 1;
+            }
+
+            @include breakpoint(small only) {
+                width: 100%;
+                margin-right: 0px;
+            }
         }
     }
 
     .actions-toolbar {
         padding: 4px;
+
+        @include breakpoint(medium down) {
+            width: 100%;
+        }
         
         .apply-filters {
             @include cta(material-color('green', '500'), $white, material-color('green', '700'), 100%);
@@ -42,14 +74,14 @@
 .filter-toolbar {
     
     &.opened {
-        transform: translateX(0%);
+        transform: translateX(0) translateY(0);
         opacity: 1;
         pointer-events: all;
         
         .filter-toolbar-content {
 
             .form-group {
-                transform: translateX(0);        
+                transform: translateX(0) translateY(0px);        
                 opacity: 1;
             }
         }

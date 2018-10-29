@@ -3,13 +3,21 @@
     background: material-color('grey', '100');
 
     .content {
-        padding-left: $sidebar-width;
+        @include breakpoint(large) {
+            padding-left: $sidebar-width;
+        }
+        @include breakpoint(medium down) {
+            padding-top: $sidebar-width;
+        }
     }
 }
 
 .grid-view,
 .table-view {
-    padding-right: $base-space / 3;
+
+    @include breakpoint(large) {
+        padding-right: $base-space / 3;
+    }
 
     > div:not([aria-hidden]) {
         overflow-x: hidden;

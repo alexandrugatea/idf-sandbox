@@ -16,6 +16,10 @@
             .image {
                 position: relative;
             }
+
+            figure {
+                flex-wrap: wrap;
+            }
         }
 
         footer {
@@ -25,7 +29,7 @@
             .controls {
                 height: 100%;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 
                 button {
                     height: calc(100% / 3);

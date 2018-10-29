@@ -5,20 +5,22 @@ $scrollbar-track:           transparent;
 $scrollbar-thumb:           material-color('green', '600');
 $scrollbar-thumb-hover:     material-color('green', '600');
 
+@include breakpoint(large) {
 
-::-webkit-scrollbar {
-    width: $scrollbar-width;
-}
+    ::-webkit-scrollbar {
+        width: $scrollbar-width;
+    }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: $scrollbar-track; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: $scrollbar-thumb;
-    width: $scrollbar-width - 2;
-    margin-left: 1px;
-    border-radius: $scrollbar-width;
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: $scrollbar-track; 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $scrollbar-thumb;
+        width: $scrollbar-width - 2;
+        margin-left: 1px;
+        border-radius: $scrollbar-width;
+    }
 }

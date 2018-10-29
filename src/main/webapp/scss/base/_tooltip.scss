@@ -1,51 +1,54 @@
-[data-tooltip] {
-    position: relative;
+@include breakpoint(large) {
 
-    &:before,
-    &:after {
-        left: calc(100% + 40px);
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.25s ease;
-        position: absolute;
-        z-index: 1000;
-    }
+    [data-tooltip] {
+        position: relative;
 
-
-    &:after {
-        content: attr(data-tooltip);
-        background: $material-grey-dark;
-        padding: 6px 12px;
-        border-radius: 4px;
-        text-align: center;
-        line-height: 1;
-        white-space: nowrap;
-    }
-
-    &:before {
-        content: "";
-        width: 0;
-        height: 0;
-        border-top: 5px solid transparent;
-        border-right: 5px solid $material-grey-dark;
-        border-bottom: 5px solid transparent;
-    }
-
-    &:hover {
-
-        &:before, 
+        &:before,
         &:after {
-            opacity: 1;
+            left: calc(100% + 40px);
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s ease;
+            position: absolute;
+            z-index: 1000;
         }
 
-        &:after  {
-            left: calc(100% + 20px);
+
+        &:after {
+            content: attr(data-tooltip);
+            background: $material-grey-dark;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 1;
+            white-space: nowrap;
         }
 
-        &:before  {
-            left: calc(100% + 15px);
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-right: 5px solid $material-grey-dark;
+            border-bottom: 5px solid transparent;
+        }
+
+        &:hover {
+
+            &:before, 
+            &:after {
+                opacity: 1;
+            }
+
+            &:after  {
+                left: calc(100% + 20px);
+            }
+
+            &:before  {
+                left: calc(100% + 15px);
+            }
         }
     }
 }
