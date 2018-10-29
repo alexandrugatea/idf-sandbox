@@ -31,12 +31,11 @@
 
 // create button
 
-@mixin cta($background: material-color('grey', '800'), $color: material-color('grey', '100'), $border-color: material-color('grey', '900'), $width: auto, $pad-h: 40px) {
+@mixin cta($background: material-color('grey', '800'), $color: material-color('grey', '100'), $border-color: material-color('grey', '900'), $width: auto, $pad-h: 12px) {
     
-    @include font(16px, 40px, 500);
+    @include font(14px, 20px, 300);
     display: inline-flex;
-    padding-left: $pad-h;
-    padding-right: $pad-h;
+    padding: ($pad-h / 2 )$pad-h;
     background: $background;
     border: 1px solid $border-color;
     color: $color;
@@ -47,7 +46,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    border-radius: 4px;
+    border-radius: 2px;
 
     &:hover {
         background: lighten($background, 10%);

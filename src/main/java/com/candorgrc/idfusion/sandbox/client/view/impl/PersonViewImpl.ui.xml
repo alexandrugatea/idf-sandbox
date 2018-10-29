@@ -6,8 +6,24 @@
 	
 	</ui:style>
 	<g:HTMLPanel styleName="person-view">
-		<header>
-			<div class="filter-toolbar">
+		<aside class="side-controls">
+			<div class="main-actions">
+				<button ui:field="toggle" class="toggle-view-mode" data-tooltip="View as Table">
+					<span class="icon-container">
+						<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+					</span>
+				</button>
+				<button class="open-filters" data-tooltip="Filter list">
+					<i class="fa fa-filter"></i>
+				</button>
+				<button ui:field="fetch" class="fetch" data-tooltip="Fetch more data"><i class="fa fa-plus"></i></button>
+			</div>
+			<div class="secondary-actions">
+				<button ui:field="reset" class="reset" data-tooltip="Reset Data Collection"><i class='fa fa-undo'></i></button>
+			</div>
+		</aside>
+		<div class="filter-toolbar">
+			<div class="filter-toolbar-content">
 				<div class="form-group title">
 					<select class="value form-element form-select" placeholder="Title" onclick="this.setAttribute('value', this.value);" value="">
 						<option value=""></option>
@@ -92,23 +108,14 @@
 						onclick="this.setAttribute('value', '2018-09-29');this.setAttribute('type', 'date');"/>
 					<label for="end" class="label">Date End:</label>
 				</div>
+				<div class="form-group actions-toolbar">
+					<button ui:field="apply" class="apply-filters">Apply Filters</button>
+				</div>
 			</div>
-			<button ui:field="apply" class="apply-filters">Apply Filters</button>
-		</header>
-		<section>
-			<header class="controls">
-				<button ui:field="toggle" class="toggle-view-mode">Switch View Mode</button>
-				<button ui:field="reset" class="reset">Reset Data Collection</button>
-			</header>
+		</div>
+		<section class="content">
 			<dp:PersonCellList ui:field="personList"
 				styleName="grid-view"></dp:PersonCellList>
 		</section>
-		<footer>
-			<button ui:field="fetch" class="fetch">Fetch more 
-				<span class="throbber">
-					<span></span><span></span><span></span>
-				</span>
-			</button>
-		</footer>
 	</g:HTMLPanel>
 </ui:UiBinder> 

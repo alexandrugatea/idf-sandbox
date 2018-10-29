@@ -46,10 +46,17 @@ $input-border : material-color('grey', '500');
         font-size: 12px;
         color: darken($focus-color, 10%);
     }
+    .form-select:hover {
+        color: material-color('grey', '500');
+    }
     .form-input:not(:placeholder-shown),
     .form-select:not([value=""]):valid {
         border-bottom: 1px solid $focus-color;
         color: $focus-color;
+    }
+    .form-select option {
+        background: material-color('grey', '800');
+        border: none;
     }
 }
 

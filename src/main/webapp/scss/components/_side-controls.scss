@@ -1,0 +1,114 @@
+.side-controls {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: $sidebar-width;
+    height: 100vh;
+    background: $material-grey-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $base-space / 3;
+    z-index: 10000;
+}
+
+.side-controls {
+
+    .main-actions {
+
+        .toggle-view-mode {
+            @include cta( material-color('green','600'), material-color('grey','100'), material-color('green','800') );
+            width: 100%;
+            padding: 9px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            
+            .icon-container {
+                display: grid;
+                grid-template-columns: repeat(3, 6px);
+                grid-template-rows: 6px;
+                grid-gap: 1px;
+                position: relative;
+                width: 20px;
+                height: 20px;
+                transition: all 0.3s linear; 
+
+                span {
+                    display: block;
+                    width: 6px;
+                    height: 100%;
+                    background: material-color('grey', '100');
+                    transition: all 0.3s linear; 
+                }
+            }
+
+            &.switched {
+
+                .icon-container {
+                    grid-template-columns: 14px 4px 2px;
+
+                    span {
+                        &:nth-child(1),
+                        &:nth-child(4),
+                        &:nth-child(7) {
+                            width: 14px;
+                        }
+
+                        &:nth-child(2),
+                        &:nth-child(5),
+                        &:nth-child(8) {
+                            width: 4px;
+                        }
+
+                        &:nth-child(3),
+                        &:nth-child(6),
+                        &:nth-child(9) {
+                            width: 2px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .open-filters {
+            @include cta;
+            padding: 9px;
+        }
+
+        .fetch {
+            @include cta;
+            padding: 9px;
+            position: relative;
+
+            .spinner {
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            &:focus:hover {
+                .spinner {
+                    opacity: 1;
+                }
+            }
+        }
+
+        button {
+            margin-bottom: $base-space / 2;
+            width: 100%!important;
+
+            i {
+                line-height: 20px;
+            }
+        }
+
+    }
+
+    .secondary-actions {
+
+        .reset {
+            @include cta(material-color('red', '900'),  $white, material-color('red', '900'));
+            padding: 9px;
+        }
+    }
+}

@@ -1,7 +1,65 @@
 .filter-toolbar {
     display: grid;
+    position: fixed;
+    top:0;
+    left: $sidebar-width;
+    height: 100vh;
+
+    // ensure it fits on smallest screen
+    width: calc(320px - $sidebar-width);
+
+    padding: $base-space / 3 $base-space / 6 0 $base-space;
+    background: material-color('grey', '800');
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 999;
+    transition: all 0.35s ease-in-out;
+
+    .filter-toolbar-content {
+        overflow-y: auto;
+        padding-right: $base-space / 2;
+        padding-top: $base-space / 2;
+        overflow-x: hidden;
+
+        .form-group {
+            transform: translateX(-20px);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    .actions-toolbar {
+        padding: 4px;
+        
+        .apply-filters {
+            @include cta(material-color('green', '500'), $white, material-color('green', '700'), 100%);
+        }
+    }
 }
 
-.apply-filters {
-    @include cta(material-color('green', '500'), $white, material-color('green', '700'), 100%);
+.filter-toolbar {
+    
+    &.opened {
+        transform: translateX(0%);
+        opacity: 1;
+        pointer-events: all;
+        
+        .filter-toolbar-content {
+
+            .form-group {
+                transform: translateX(0);        
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// add delay to each form-group
+
+@for $i from 1 through 18 {
+    .filter-toolbar.opened .filter-toolbar-content .form-group:nth-child(#{$i}) {
+        transition-delay: unquote(0.08 * $i + 's');
+    }
 }

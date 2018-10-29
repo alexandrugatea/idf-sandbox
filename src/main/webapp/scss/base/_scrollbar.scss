@@ -1,7 +1,7 @@
 // component variables
 
 $scrollbar-width:           $base-space / 5;
-$scrollbar-track:           material-color('grey', '100');
+$scrollbar-track:           transparent;
 $scrollbar-thumb:           material-color('green', '600');
 $scrollbar-thumb-hover:     material-color('green', '600');
 
@@ -21,10 +21,4 @@ $scrollbar-thumb-hover:     material-color('green', '600');
     width: $scrollbar-width - 2;
     margin-left: 1px;
     border-radius: $scrollbar-width;
-}
-
-// custom scrollbars
-
-.person-view > header::-webkit-scrollbar-track {
-    background: material-color('grey', '900'); 
 }

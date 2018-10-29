@@ -1,26 +1,19 @@
 .person-view {
-    display: grid;
-    grid-template-columns: 280px auto;
-    grid-template-areas: "filters sections"
-                         "filters fetch"; 
+    display: block;
     background: material-color('grey', '100');
-    overflow-y: auto;
-    
-    > header {
-        grid-area: filters;
-        background: material-color('grey', '900');
-        height: 100vh;
+
+    .content {
+        padding-left: $sidebar-width;
+    }
+}
+
+.grid-view,
+.table-view {
+    padding-right: $base-space / 3;
+
+    > div:not([aria-hidden]) {
+        overflow-x: hidden;
         overflow-y: auto;
-        position: sticky;
-        top: 0;
-        padding: $base-space;
-    }
-
-    > section {
-        grid-area: sections;
-    }
-
-    > footer {
-        grid-area: fetch;
+        max-height: 100vh;
     }
 }
