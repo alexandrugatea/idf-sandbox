@@ -5,8 +5,8 @@
         position: relative;
         .floating-button {
             position: absolute;
-            top:0;
-            right: 0;
+            top: rem-calc($base-space / 2);
+            right: rem-calc($base-space / 2);
         }
         figure {
             display: block;
@@ -56,37 +56,64 @@
 
         .Male {
 
-            @include icon($fa-var-mars, $male-icon-color, 12px);
+            @include icon($fa-var-mars, $white, 14px);
 
-            color: $male-icon-color;
+            background: $male-icon-color;
         }
 
         .Female {
 
-            @include icon($fa-var-venus, $female-icon-color, 12px);
+            @include icon($fa-var-venus, $white, 14px);
+            &:before {
+                position: relative;
+                left: 1px;
+            }
 
-            color: $female-icon-color;
+            background: $female-icon-color;
         }
 
         .gender-icon {
             position: absolute;
-            top: 0;
+            bottom: 0;
             right: 0;
-            padding: 3px; 
+            padding: rem-calc(3); 
+            border-radius: 50%;
+            border: 1px solid material-color("grey", "200");
+            width: rem-calc(25px);
+            height: rem-calc(25px);
+            box-shadow: $card-shadow $card-shadow-color-alpha;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
 
+$card-backgrounds: (
+    red,
+    pink,
+    purple,
+    blue,
+    cyan,
+    teal,
+    green,
+    lime,
+    amber,
+    orange
+);
+
 @for $i from 0 through 9 {
+
+    $color: $i + 1;
+    $colorName: nth($card-backgrounds, $color);
+
     [__idx$="#{$i}"] {
         
         .person-cell header {
             background-image: url('/images/card-header-#{$i}.jpg');
+            background-color: material-color("#{$colorName}", "600");
         }
     }
 }
 
-@for $j from 0 through 9 {
-
-}
 

@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     display: flex;
+
     .float-btn {
         width: $float-btn-size;
         height: $float-btn-size;
@@ -16,6 +17,7 @@
         display: block;
         transition: all 0.15s ease-in-out;
         position: relative;
+
         i {
             position: absolute;
             top: 50%;
@@ -23,6 +25,7 @@
             transform: translate(-50%, -50%);
         }
     }
+
     .float-trigger {
         position: relative;
         z-index: 100;
@@ -30,6 +33,7 @@
         color: #fff;
         transition: all 0.3s ease;
     }
+
     .share-items {
         z-index: 0;
         position: absolute;
@@ -37,6 +41,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         list-style-type: none;
+
         .floating-item {
             transform: translate(-50%, -50%);
             transition: all 0.3s ease;
@@ -45,9 +50,11 @@
             color: #fff;
             transition: all 0.3s ease;
             border-radius: 50%;
+
             .float-btn {
                 text-decoration: none;
                 color: inherit;
+
                 &:hover {
                     transform: scale(1.2);
                     box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.2);
@@ -58,11 +65,14 @@
 }
 
 .floating-button.opened {
+
     .float-trigger {
         transform: scale(1.5);
         box-shadow: 0px 0px 0px 5px rgba($float-btn-color, 0.3);
+        background: material-color("grey", "900");
         z-index: 3001;
     }
+    
     .share-items {
         z-index: 3000;
     }
