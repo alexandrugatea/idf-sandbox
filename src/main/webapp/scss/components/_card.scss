@@ -13,10 +13,6 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    
-    header, section {
-        padding: $base-space / 2;
-    }
 }
 
 [__idx] {

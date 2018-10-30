@@ -1,0 +1,62 @@
+// component based variables
+
+$tab-color:             material-color("grey", "600");
+
+
+.tabs {
+    position: relative;
+
+    &-list {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+    &-container {
+        padding-top: $base-space / 2;
+    }
+
+    &-title {
+        margin-bottom: $base-space / 2;
+        @include font(16px, 16px, 700);   
+    }
+
+    &-content {
+        width: 100%;
+        height: 0;
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+            height: auto;
+        }
+    }
+
+    &-item {
+        text-align: center;
+        flex-grow: 1;
+        cursor: pointer;
+        position: relative;
+        padding-bottom: $base-space / 3;
+
+        span {
+            @include font(14px, 14px, 500);
+            color: $tab-color;
+        }
+
+        &.active {
+
+            &:after {
+                content:'';
+                width: 20px;
+                height: 2px;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

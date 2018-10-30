@@ -1,6 +1,8 @@
 .person-cell {
 
     > section {
+        flex-grow: 1;
+        padding: $base-space / 2;
 
         > div [title]:not(i) {
 

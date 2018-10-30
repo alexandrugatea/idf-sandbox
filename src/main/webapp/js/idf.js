@@ -24,7 +24,7 @@ jQuery(document).ready(function($){
     $(document).on('click','.floating-dial-bottom-left button', function () {
         var floatingEl = $(this).parents('.floating-button').find('.floating-item');
         var floatParent = $(this).parents('.floating-button');
-        $(this).find('.fa').toggleClass('fa-cog' + " " + 'fa-cog');
+        $(this).find('.fa').toggleClass('fa-cog' + " " + 'fa-times');
         if (floatParent.hasClass("opened")) {
             floatingEl.semiCircle(0, 0, 0, 0, 0, 0, 0);
             floatParent.removeClass("opened").addClass("closing");
@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
                 floatParent.removeClass("closing");
             }, 200);
         } else {
-            floatingEl.semiCircle(0, 0, 50, 50, 90, 180, 1);
+            floatingEl.semiCircle(0, 0, 40, 40, 90, 180, 1);
             floatParent.addClass("opened").removeClass("closing");
         }
     });
@@ -58,19 +58,17 @@ jQuery(document).ready(function($){
     });
 
     $(document).on("click", '.toggle-view-mode', function(){
+       // add delay on loaded cards
         var delay = 50;
         $('[__idx]').each(function() {
-    
             $(this).css('animation-delay', delay + 'ms');
             delay += 50;
-    
         });
         
         changeView();
     });
 
-
-
+    // change view
 
     function changeView() {
 
@@ -98,10 +96,22 @@ jQuery(document).ready(function($){
         setTimeout(function(){
             card.removeClass('is-animating-list is-animating-grid');
         }, 800);
-
-
-
     }
 
+    // tabs
+
+    $(document).on("click", ".tabs-item", function(){
+
+        var parentCard = $(this).parents('.person-cell').find('.tabs'),
+            target = $(this).attr('data-target');
+
+            parentCard.find('.tabs-item').removeClass('active');
+            $(this).addClass('active');
+
+            parentCard.find('.tabs-content').removeClass('active');
+            parentCard.find('[data-target="' + target + '"]').addClass('active');
+
+
+    });
 
 });

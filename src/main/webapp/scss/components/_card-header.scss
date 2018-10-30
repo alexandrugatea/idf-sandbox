@@ -3,16 +3,36 @@
 
     header {
         position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+            mix-blend-mode: hard-light;
+        }
+
         .floating-button {
             position: absolute;
             top: rem-calc($base-space / 2);
             right: rem-calc($base-space / 2);
+            z-index: 100;
         }
+
         figure {
             display: block;
+            position: relative;
+            z-index: 90;
 
             .image {
-                margin:20px auto;
+                margin:20px auto 10px;
                 width: 50px;
                 height: 50px;
                 position: relative;
@@ -31,45 +51,28 @@
             }
 
             .caption {
-                flex-grow: 1;
+                color: $white;
+                padding: $base-space / 2;
+                text-align: center;
 
                 span {
                     @include font(14px, 14px, 400);
                 }
 
-                .title {
-                    display: block;
-                    font-size: 12px;
-                    font-weight: 700;
-                    position: relative;
-                    top: 2px;
-                }
-
-                .first-name {
-                    &:after {
-                        content: ' ';
-                    }
-                }
-
                 .last-name {
                     text-transform: uppercase;
-                    &:after {
-                        content: ', ';
-                    }
                 }
             }
         }
 
         .Male {
-
             @include icon($fa-var-mars, $white, 12px);
-
             background: $male-icon-color;
         }
 
         .Female {
-
             @include icon($fa-var-venus, $white, 12px);
+            
             &:before {
                 position: relative;
                 left: 1px;
@@ -118,7 +121,20 @@ $card-backgrounds: (
         
         .person-cell header {
             background-image: url('/images/card-header-#{$i}.jpg');
-            background-color: material-color("#{$colorName}", "600");
+
+            &:before {
+                content: '';
+                background-color:  material-color("#{$colorName}", "600");
+            }
+        }
+
+        .tabs .tabs-item.active{
+            span {
+                color: material-color("#{$colorName}", "600");
+            }
+            &:after {
+                background-color: material-color("#{$colorName}", "600");
+            }
         }
     }
 }
