@@ -22,8 +22,8 @@ jQuery.fn.semiCircle = function (cx, cy, radius, radiusY, startDegrees, endDegre
 jQuery(document).ready(function($){
 
     $(document).on('click','.floating-dial-bottom-left button', function () {
-        var floatingEl = $(this).parents('.floating-share').find('.floating-item');
-        var floatParent = $(this).parents('.floating-share');
+        var floatingEl = $(this).parents('.floating-button').find('.floating-item');
+        var floatParent = $(this).parents('.floating-button');
         $(this).find('.fa').toggleClass('fa-cog' + " " + 'fa-cog');
         if (floatParent.hasClass("opened")) {
             floatingEl.semiCircle(0, 0, 0, 0, 0, 0, 0);

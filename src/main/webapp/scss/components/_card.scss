@@ -15,3 +15,66 @@
         padding: $base-space / 2;
     }
 }
+
+[__idx] {
+    &.is-animating-grid {
+      animation: 0.3s ease forwards animating-list;
+      opacity: 1;
+    }
+    &.is-animating-list {
+      animation: 0.3s ease forwards animating-grid;
+      opacity: 1;
+    }
+    &.animate-list-in {
+      opacity: 0;
+      animation: 0.3s ease forwards list;
+    }
+    &.animate-grid-in {
+      opacity: 0;
+      animation: 0.3s ease forwards grid;
+    }
+  }
+
+  @keyframes grid {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes animating-grid {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
+
+@keyframes list {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes animating-list {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}

@@ -1,18 +1,18 @@
 // card header variables
-
-
-
 .person-cell {
 
     header {
         position: relative;
-
+        .floating-button {
+            position: absolute;
+            top:0;
+            right: 0;
+        }
         figure {
-            display: flex;
-            align-items: center;
+            display: block;
 
             .image {
-                margin-right:$base-space / 2;
+                margin:20px auto;
                 width: 50px;
                 height: 50px;
                 
@@ -76,3 +76,17 @@
         }
     }
 }
+
+@for $i from 0 through 9 {
+    [__idx$="#{$i}"] {
+        
+        .person-cell header {
+            background-image: url('/images/card-header-#{$i}.jpg');
+        }
+    }
+}
+
+@for $j from 0 through 9 {
+
+}
+

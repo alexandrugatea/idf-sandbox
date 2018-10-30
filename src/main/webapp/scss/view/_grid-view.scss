@@ -2,7 +2,7 @@
 
 $grid-image-size: 50px;
 
-.grid-view {
+.grid {
 
     > div {
         display: grid;
@@ -16,49 +16,15 @@ $grid-image-size: 50px;
         box-shadow: $card-shadow $card-shadow-color-alpha;
 
         header {
-            background: material-color('grey', '200');
-            padding-left: $grid-image-size + $base-space;
+            background: material-color('grey', '800');
 
             .image {
-                position: absolute;
-                bottom: 0;
-                left: $base-space / 2;
-                transform: translateY(15%);
+                position: relative;
                 background: $white;
                 border: 2px solid $white;
+                border-radius: 50%;
                 box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.14);
-            }
-        }
-
-        &.Male {
-
-            header {
-                border-bottom: 2px solid $male-icon-color;
-            }
-        }
-
-        &.Female {
-            
-            header {
-                border-bottom: 2px solid $female-icon-color;
-            }
-        }
-
-        footer {
-            border-top: 1px solid material-color('grey', '100');
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-
-            .controls {
-                display: flex;
-                justify-content: space-evenly;
-    
-                button {
-                    width: calc(100% / 3);
-                    padding: 10px 20px;
-                }
+                overflow: hidden;
             }
         }
 

@@ -2,13 +2,14 @@
 
 @import 'vendor/fontawesome/font-awesome', 
         'vendor/material-color/sass-material-colors',
-        'vendor/spinner/spinner',
         'base/variables',
         'mixins/mixins',
+        'vendor/spinner/spinner',
         'mixins/mq';
 
 
 @import 'base/reset',
+        'base/error',
         'base/grid',
         'base/forms',
         'base/scrollbar',
@@ -16,7 +17,8 @@
 
 @import 'components/side-controls',
         'components/card',
-        'components/filters';
+        'components/filters',
+        'components/floating-buttons';
 
 
 @import 'view/grid-view',

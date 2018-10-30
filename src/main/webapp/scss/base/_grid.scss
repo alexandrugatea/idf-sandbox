@@ -1,7 +1,6 @@
 .person-view {
     display: block;
-    background: material-color('grey', '100');
-
+    background: material-color('grey', '700');
     .content {
         @include breakpoint(large) {
             padding-left: $sidebar-width;
@@ -12,14 +11,12 @@
     }
 }
 
-.grid-view,
-.table-view {
-
+.grid,
+.table {
     @include breakpoint(large) {
         padding-right: $base-space / 3;
     }
-
-    > div:not([aria-hidden]) {
+    >div:not([aria-hidden]) {
         overflow-x: hidden;
         overflow-y: auto;
         max-height: 100vh;

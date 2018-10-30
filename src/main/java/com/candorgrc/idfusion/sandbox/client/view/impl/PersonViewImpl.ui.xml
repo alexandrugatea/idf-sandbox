@@ -117,5 +117,8 @@
 			<dp:PersonCellList ui:field="personList"
 				styleName="grid"> </dp:PersonCellList>
 		</section>
+		<footer class="copyright">
+			&copy; Alexandru Gatea. Style rights reserved!
+		</footer>
 	</g:HTMLPanel>
 </ui:UiBinder> 

@@ -16,17 +16,13 @@
 <!--                                                               -->
 <!-- Consider inlining CSS to reduce the number of requested files -->
 <!--                                                               -->
-<!-- @designer: comment if you're NOT using less -->
-<!-- <link type="text/css" rel="stylesheet" href="less/sandbox.css"> -->
-<!-- @designer: comment if you're NOT using sass/scss -->
+
 <link type="text/css" rel="stylesheet" href="scss/sandbox.css">
-<!-- @designer: comment if you're using less and/or sass -->
-<!-- <link type="text/css" rel="stylesheet" href="sandbox.css"> -->
 
 <!--                                           -->
 <!-- Any title is fine                         -->
 <!--                                           -->
-<title>IdFusion™ Sandbox</title>
+<title>IdFusion™ Sandbox | Alexandru Gatea</title>
 
 <!--                                           -->
 <!-- This script loads your compiled module.   -->
@@ -50,10 +46,14 @@
 
 	<!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
 	<noscript>
-		<div
-			style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
-			Your web browser must have JavaScript enabled in order for this
-			application to display correctly.</div>
+		<div class="enable-javascript">
+			<div class="error-message">
+				<span>
+					Your web browser must have JavaScript enabled in order for this
+					application to display correctly.
+				</span>
+			</div>
+		</div>
 	</noscript>
 
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>

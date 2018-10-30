@@ -1,0 +1,47 @@
+// component variables
+
+$error-color:           material-color("red", "600");
+$error-text-color:      material-color("grey", "800");
+$error-icon-color:      material-color("grey", "100");
+$error-width:           450px;
+
+.enable-javascript {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .error-message {
+        display: block;
+        width: 90%;
+        max-width: $error-width;
+        padding: $base-space;
+        background: $white;
+        border-left: 8px solid $error-color;
+        color: $error-text-color;
+        @include font(20px, 28px, 300);
+        box-shadow: $card-shadow $card-shadow-color-alpha;
+        position: relative;
+
+        &:before {
+           
+            @include fa-icon;
+            content: $fa-var-info;
+            position: absolute;
+            top: 25%;
+            transform: translate(35%, -50%);
+            right: 0;
+            pointer-events: none;
+            font-size: 20px;
+            color: $error-icon-color;
+            box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.15);
+            width: 40px;
+            height: 40px;
+            background: $error-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+    }
+}
