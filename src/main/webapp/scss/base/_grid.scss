@@ -1,6 +1,6 @@
 .person-view {
     display: block;
-    background: material-color('grey', '700');
+    background: material-color('grey', '800');
     .content {
         @include breakpoint(large) {
             padding-left: $sidebar-width;

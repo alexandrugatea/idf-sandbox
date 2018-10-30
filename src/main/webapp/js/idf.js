@@ -48,7 +48,7 @@ jQuery(document).ready(function($){
     });
 
     // close filters
-    $(document).on("mouseup", function(e) {
+    $(document).on("click", ".content", function(e) {
         var filters = $(".filter-toolbar");
 
         // if the target of the click isn't the container nor a descendant of the container

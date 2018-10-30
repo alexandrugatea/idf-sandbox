@@ -9,6 +9,11 @@ $grid-image-size: 50px;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         grid-gap: $base-space;
         padding: $base-space;
+
+        @include breakpoint(medium down) {
+            grid-gap:20px;
+            padding: 20px;
+        }
     }
 
     .person-cell {
