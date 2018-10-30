@@ -12,11 +12,12 @@ $grid-image-size: 50px;
     }
 
     .person-cell {
-        background: $white;
+
         box-shadow: $card-shadow $card-shadow-color-alpha;
 
         section {
             padding-top: $base-space;
+            background: $white;
 
             aside {
                 padding: 10px 0 0 0;
