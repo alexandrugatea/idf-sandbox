@@ -52,7 +52,7 @@ public class PersonViewImpl extends Composite implements PersonView {
 	}
 
 	private void addEventHandlers() {
-		toggle.addEventListener("click", event -> personList.setStyleName("grid-view" == personList.getStyleName() ? "table-view" : "grid-view"));
+		// toggle.addEventListener("click", event -> personList.setStyleName("grid-view" == personList.getStyleName() ? "table-view" : "grid-view"));
 		reset.addEventListener("click", event -> presenter.onResetEvent());
 		fetch.addEventListener("click", event -> presenter.onFetchEvent());
 		apply.addEventListener("click", event -> presenter.onSearchEvent());

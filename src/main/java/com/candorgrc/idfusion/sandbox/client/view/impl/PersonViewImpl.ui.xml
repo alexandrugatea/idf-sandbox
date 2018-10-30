@@ -115,7 +115,7 @@
 		</div>
 		<section class="content">
 			<dp:PersonCellList ui:field="personList"
-				styleName="grid-view"></dp:PersonCellList>
+				styleName="grid"> </dp:PersonCellList>
 		</section>
 	</g:HTMLPanel>
 </ui:UiBinder> 
