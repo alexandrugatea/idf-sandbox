@@ -94,41 +94,50 @@
                 opacity: 1;
                 height: auto;
                 width: auto;
+                flex-grow: 1;
 
                 [title] {
                     display: block;
                     border-left: 1px solid material-color("grey", "300");
-                    padding: 10px;
+                    padding: 0 10px 10px;
                     margin: 0;
+                    flex-grow: 1;
 
                     &:before {
                         display: block;
                         width: auto;
                         margin-left: -10px;
                         margin-right: -10px;
-                        margin-bottom: 5px;
-                        padding: 0 10px 5px;
+                        margin-bottom: 10px;
+                        padding: 10px 10px 5px;
                         border-bottom:1px solid material-color("grey", "300");
                         white-space: nowrap;
+                        background: material-colo("grey", "200");
                     }
                 }
                 .race {
-                    width: 120px;
+                    width: rem-calc(120px);
                 }
                 .language {
-                    width: 100px;
+                    width: rem-calc(150px);
                 }
                 .university {
-                    width: 200px;
+                    width: rem-calc(200px);
                 }
                 .department {
-                    width: 100px;
+                    width: rem-calc(140px);
                 }
                 .ein {
-                    width: 200px;
+                    width: rem-calc(200px);
                 }
                 .email {
-                    width: 200px;
+                   width: rem-calc(200px);
+                }
+                .linkedin-skill {
+                    width: rem-calc(180px);
+                }
+                .buzzword {
+                    width: rem-calc(180px);
                 }
             }
         }

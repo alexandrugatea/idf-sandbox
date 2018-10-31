@@ -149,7 +149,7 @@ $card-backgrounds: (
         }
 
         .tabs .tabs-item.active {
-            span {
+            i {
                 color: material-color("#{$colorName}", "700");
             }
             &:after {

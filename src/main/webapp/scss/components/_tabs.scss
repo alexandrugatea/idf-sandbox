@@ -1,6 +1,6 @@
 // component based variables
 
-$tab-color:             material-color("grey", "600");
+$tab-color:             material-color("grey", "400");
 
 
 .tabs {
@@ -42,8 +42,8 @@ $tab-color:             material-color("grey", "600");
         position: relative;
         padding: $base-space / 3 0;
 
-        span {
-            @include font(14px, 14px, 500);
+        i {
+            font-size: rem-calc(12px);
             color: $tab-color;
         }
 
