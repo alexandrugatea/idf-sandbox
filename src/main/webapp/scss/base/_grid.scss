@@ -20,5 +20,9 @@
         overflow-x: hidden;
         overflow-y: auto;
         max-height: 100vh;
+        padding: $base-space;
+        @include breakpoint(medium down) {
+            padding: 20px;
+        }
     }
 }

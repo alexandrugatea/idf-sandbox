@@ -2,12 +2,13 @@
     display: grid;
     position: fixed;
     padding: $base-space / 3 $base-space / 6 0 $base-space;
-    background: material-color('grey', '800');
+    background: material-color('grey', '900');
     overflow: hidden;
     pointer-events: none;
     opacity: 0;
     z-index: 999;
     transition: all 0.35s ease-in-out;
+    box-shadow: $card-shadow $card-shadow-color-alpha;
     
     @include breakpoint(large) {
         top:0;

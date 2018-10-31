@@ -39,7 +39,8 @@ jQuery(document).ready(function($){
 
     // add class to togggle button on switch
     $(document).on('click', '.toggle-view-mode',  function(){    
-        $(this).toggleClass('switched').attr('data-tooltip', $($(this)).attr('data-tooltip') == 'View as Grid' ? 'View as List' : 'View as Grid')
+        $(this).toggleClass('switched').attr('data-tooltip', $($(this)).attr('data-tooltip') == 'View as Grid' ? 'View as List' : 'View as Grid');
+        $('.filter-toolbar').removeClass('opened');
     });
 
     // open filters

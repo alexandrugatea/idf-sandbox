@@ -1,6 +1,13 @@
 // card header variables
 .person-cell {
 
+    .floating-button {
+        position: absolute;
+        top: rem-calc($base-space / 2);
+        right: rem-calc($base-space / 2);
+        z-index: 100;
+    }
+
     header {
         position: relative;
         background-size: cover;
@@ -34,20 +41,14 @@
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); 
         }
 
-        .floating-button {
-            position: absolute;
-            top: rem-calc($base-space / 2);
-            right: rem-calc($base-space / 2);
-            z-index: 100;
-        }
-
         figure {
             display: block;
             position: relative;
             z-index: 90;
+            padding: 10px;
 
             .image {
-                margin:20px auto 10px;
+                margin:0px auto 10px;
                 width: 50px;
                 height: 50px;
                 position: relative;
@@ -67,11 +68,15 @@
 
             .caption {
                 color: $white;
-                padding: $base-space / 2;
+                padding: 10px $base-space / 2 0;
                 text-align: center;
 
-                span {
-                    @include font(14px, 14px, 400);
+                > span {
+                    @include font(14px, 14px, 500);
+                }
+
+                p > span {
+                    @include font(13px, 13px, 300);
                 }
 
                 .last-name {

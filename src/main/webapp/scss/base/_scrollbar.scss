@@ -9,6 +9,7 @@ $scrollbar-thumb-hover:     material-color('green', '600');
 
     ::-webkit-scrollbar {
         width: $scrollbar-width;
+        height: $scrollbar-width;
     }
 
     /* Track */

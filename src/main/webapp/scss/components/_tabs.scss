@@ -19,6 +19,7 @@ $tab-color:             material-color("grey", "600");
 
     &-title {
         margin-bottom: $base-space / 2;
+        width: 100%;
         @include font(16px, 16px, 700);   
     }
 
@@ -26,10 +27,11 @@ $tab-color:             material-color("grey", "600");
         width: 100%;
         height: 0;
         opacity: 0;
+        transition: all 0.3s ease;
+        background: $white;
 
         &.active {
             opacity: 1;
-            height: auto;
         }
     }
 
@@ -38,7 +40,7 @@ $tab-color:             material-color("grey", "600");
         flex-grow: 1;
         cursor: pointer;
         position: relative;
-        padding-bottom: $base-space / 3;
+        padding: $base-space / 3 0;
 
         span {
             @include font(14px, 14px, 500);

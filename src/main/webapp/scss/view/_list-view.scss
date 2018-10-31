@@ -1,110 +1,136 @@
 
 .table {
-    padding: $base-space;
-    
+
+    > div {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        grid-gap: $base-space / 2;
+
+        @include breakpoint(medium down) {
+            grid-gap:$base-space / 3;
+        }
+    }
+
     .person-cell {
         display: flex;
-        margin-bottom: 0;
-        padding: 0px;
-        box-shadow: none;
-        align-items: center;
-        transition: all 0.5s ease;
+        flex-direction: row;
+        transition: all 0.35s ease;
+        overflow: visible;
 
         header {
-            width: 15%;
+            width: 235px;
+            flex-shrink: 0;
+            display: flex;
 
-            .image {
-                position: relative;
+            @include breakpoint(small only) {
+                width: 175px;
+            }
+
+            &:before {
+                opacity: 1;
+                mix-blend-mode: unset;
+            }
+
+            &:after {
+                display: none;
             }
 
             figure {
-                flex-wrap: wrap;
-            }
-        }
-
-        footer {
-            position: relative;
-            height: 100%;
-
-            .controls {
-                height: 100%;
                 display: flex;
-                flex-direction: column;
-                
-                button {
-                    height: calc(100% / 3);
-                    padding: $base-space / 3;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0;
+
+                .image {
+                    flex-shrink: 0;
+                    margin: 0 $base-space / 3 0 -10px;
+
                 }
+
+                .caption {
+                    text-align: left;
+                    padding: 5px;
+                }
+
             }
         }
 
         section {
             display: flex;
-            flex-wrap: wrap;
+            flex-grow: 1;
+            background: $white;
             padding: 0;
-            width: 85%;
+            width: calc(100% - 235px);
 
-            > div > [title]:not(i) {
-                flex-wrap: wrap;
-                &:before {
-                    display: block;
-                    width: 100%;
-                    padding-right: 0px;
+            @include breakpoint(small only) {
+                width: calc(100% - 175px);
+            }
+        }
+
+        .tabs {
+            .tabs-list {
+                display: none;
+
+                .tabs-item {
+                    flex-grow: 0;
+                    padding-right: 10px;
                 }
             }
-            
-            > div,
-            > aside {
-                flex-shrink: 0;
+
+            .tabs-title {
+                display: none;
+            }
+
+            .tabs-container {
                 display: flex;
-
-                > div {
-                    flex-shrink: 0;
-                    padding: $base-space / 3;
-                    height: 100%;
-                }
-            }
-
-            .personal-info, .social {
-                width: 40%;
-                > div {
-                    width: 50%;
-                }
-            }
-
-            .education {
-                width: 20%;
-                >div {
-                    width: 100%;
-                }
-            }
-
-            .work {
-                display: flex;
-                order: 1;
+                padding: 0;
                 width: 100%;
-                margin-top: 0 - ($base-space / 3);
-                transition: all 0.3s ease;
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
 
-                > div {
-                    width: 20%;
-                    flex-shrink: 0;
+            .tabs-content {
+                display: flex;
+                opacity: 1;
+                height: auto;
+                width: auto;
+
+                [title] {
+                    display: block;
+                    border-left: 1px solid material-color("grey", "300");
+                    padding: 10px;
+                    margin: 0;
+
+                    &:before {
+                        display: block;
+                        width: auto;
+                        margin-left: -10px;
+                        margin-right: -10px;
+                        margin-bottom: 5px;
+                        padding: 0 10px 5px;
+                        border-bottom:1px solid material-color("grey", "300");
+                        white-space: nowrap;
+                    }
+                }
+                .race {
+                    width: 120px;
+                }
+                .language {
+                    width: 100px;
+                }
+                .university {
+                    width: 200px;
+                }
+                .department {
+                    width: 100px;
+                }
+                .ein {
+                    width: 200px;
+                }
+                .email {
+                    width: 200px;
                 }
             }
         }
     }
-
-    .cellListEvenItem {
-        background: material-color('grey', '200');
-    }
-
-    .cellListOddItem {
-        background: $white;
-    }
-}
-
-@keyframes showWork {
-    0%{display: none; opacity:0}
-    90%{display:flex; opacity:0}
-    100%{display: flex; opacity:1}
 }
