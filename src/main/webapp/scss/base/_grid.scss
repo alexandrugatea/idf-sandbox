@@ -19,7 +19,7 @@
     >div:not([aria-hidden]) {
         overflow-x: hidden;
         overflow-y: auto;
-        max-height: 100vh;
+        max-height: calc(100vh - 30px);
         padding: $base-space;
         @include breakpoint(medium down) {
             padding: rem-calc(20px);

@@ -115,10 +115,11 @@
 		</div>
 		<section class="content">
 			<dp:PersonCellList ui:field="personList"
-				styleName="grid"> </dp:PersonCellList>
+				styleName="grid"> 
+
+			</dp:PersonCellList>
+
 		</section>
-		<footer class="copyright">
-			&copy; Alexandru Gatea. Style rights reserved!
-		</footer>
+		<footer class="copyright"> &copy; Alexandru Gatea. Style rights reserved! </footer>
 	</g:HTMLPanel>
 </ui:UiBinder> 
