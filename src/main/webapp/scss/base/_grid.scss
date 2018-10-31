@@ -22,7 +22,7 @@
         max-height: 100vh;
         padding: $base-space;
         @include breakpoint(medium down) {
-            padding: 20px;
+            padding: rem-calc(20px);
         }
     }
 }

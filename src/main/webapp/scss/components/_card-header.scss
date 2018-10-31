@@ -3,8 +3,8 @@
 
     .floating-button {
         position: absolute;
-        top: rem-calc($base-space / 2);
-        right: rem-calc($base-space / 2);
+        top: 0;
+        right: 0;
         z-index: 100;
     }
 
@@ -45,14 +45,14 @@
             display: block;
             position: relative;
             z-index: 90;
-            padding: 10px;
+            padding: rem-calc(10px);
 
             .image {
                 margin:0px auto 10px;
-                width: 50px;
-                height: 50px;
+                width: rem-calc(50px);
+                height: rem-calc(50px);
                 position: relative;
-                border: 2px solid $white;
+                border: rem-calc(2px) solid $white;
                 background: $white;
                 box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.14);
                 border-radius: 50%;
@@ -123,7 +123,7 @@ $card-backgrounds: (
     red,
     pink,
     purple,
-    amber,
+    deep-orange,
     blue,
     cyan,
     lime,
@@ -144,22 +144,34 @@ $card-backgrounds: (
 
             &:before {
                 content: '';
-                background-color:  material-color("#{$colorName}", "600");
+                background-color:  material-color("#{$colorName}", "700");
             }
         }
 
         .tabs .tabs-item.active {
             span {
-                color: material-color("#{$colorName}", "600");
+                color: material-color("#{$colorName}", "700");
             }
             &:after {
-                background-color: material-color("#{$colorName}", "600");
+                background-color: material-color("#{$colorName}", "700");
             }
         }
         .floating-button .share-items .floating-item .float-btn {
 
             &:hover {
-                color: material-color("#{$colorName}", "600");
+                color: material-color("#{$colorName}", "700");
+            }
+        }
+    }
+
+    .table [__idx$="#{$i}"] {
+
+        .floating-button .share-items .floating-item .float-btn {
+            background:material-color("#{$colorName}", "900"); 
+            box-shadow: $card-shadow $card-shadow-color-alpha;
+
+            &:hover {
+                color: $white;
             }
         }
     }

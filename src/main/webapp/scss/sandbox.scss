@@ -1,13 +1,18 @@
+// author: @Alexandru Gatea
+
 // import partials
 
+// Import dependencies
 @import 'vendor/fontawesome/font-awesome', 
         'vendor/material-color/sass-material-colors',
+        
+        //import variables. Do not import styles above this line
         'base/variables',
         'mixins/mixins',
         'vendor/spinner/spinner',
         'mixins/mq';
 
-
+// import global styles
 @import 'base/reset',
         'base/error',
         'base/grid',
@@ -15,12 +20,13 @@
         'base/scrollbar',
         'base/tooltip';
 
+// import component styles
 @import 'components/side-controls',
         'components/card',
         'components/filters',
         'components/floating-buttons',
         'components/tabs';
 
-
+// import specific view mode styles
 @import 'view/grid-view',
         'view/list-view';

@@ -1,7 +1,6 @@
 // import card elements
 @import 'card-header',
-        'card-section',
-        'card-footer';
+        'card-section';
 
 // base card styles
 
@@ -9,7 +8,7 @@
     background: $white;
     height: 100%;
     position: relative;
-    border-radius: 10px;
+    border-radius: rem-calc(10px);
     overflow: hidden;
     display: flex;
     flex-direction: column;

@@ -51,8 +51,8 @@ $tab-color:             material-color("grey", "600");
 
             &:after {
                 content:'';
-                width: 20px;
-                height: 2px;
+                width: rem-calc(20px);
+                height: rem-calc(2px);
                 display: block;
                 position: absolute;
                 bottom: 0;
